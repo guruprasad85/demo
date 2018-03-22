@@ -1,5 +1,6 @@
 post_ci:
   - pwd
+  - rvm use $SHIPPABLE_RUBY
 resources:
   - name: demo-www-img
     type: image
