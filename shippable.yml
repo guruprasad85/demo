@@ -25,7 +25,7 @@ resources:
 
 
 jobs:
-  - name: 22_runCI
+  - name: demo_runCI
     type: runCI
     steps:
       - OUT: demo-www-img
