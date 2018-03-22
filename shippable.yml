@@ -21,6 +21,9 @@ resources:
 
 
 jobs:
+
+language: none
+
   - name: 22_runCI
     type: runCI
     steps:
