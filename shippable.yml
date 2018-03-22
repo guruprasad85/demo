@@ -7,9 +7,9 @@ resources:
     type: image
     integration: awskey1
     pointer:
-      sourceName: "master.3"
+      sourceName: "master.1"
     seed:
-      versionName: "master.3"
+      versionName: "master.1"
   - name: demo-www-docker-opts
     type: dockerOptions
     versionTemplate:
@@ -20,7 +20,7 @@ resources:
     type: cluster
     integration: awskey1
     pointer:
-      sourceName : "demo-prod"
+      sourceName : "demo"
       region: "us-east-2"
 
 
@@ -35,10 +35,10 @@ jobs:
       - IN: guru-www-img
       - IN: demo-www-docker-opts
         applyTo:
-          - demo-cram-img
+          - demo-guru-img
     flags:
       - Demo
-  - name: demo-cram-ecs
+  - name: demo-guru-ecs
     type: deploy
     steps:
      - IN: demo-www-man
