@@ -35,7 +35,7 @@ jobs:
       - IN: demo-www-img
       - IN: demo-www-docker-opts
         applyTo:
-          - services-cram-img
+          - demo-cram-img
     flags:
       - Demo
   - name: demo-cram-ecs
@@ -44,8 +44,8 @@ jobs:
      - IN: demo-www-man
      - IN: demo-www-clus
        applyTo:
-          - manifest: cram-www-man
-            image: cram-www-img
+          - manifest: demo-www-man
+            image: demo-www-img
             port: 80
      - TASK: managed
        deployMethod: replace
