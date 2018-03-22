@@ -1,3 +1,5 @@
+langauge: none
+
 post_ci:
   - pwd
   - rvm use $SHIPPABLE_RUBY
