@@ -1,13 +1,13 @@
 build:
   ci:
     - pwd
-    - rvm use $SHIPPABLE_RUBY
+#    - rvm use $SHIPPABLE_RUBY
 resources:
-  - name: demo-www-img
+  - name: guru-www-img
     type: image
     integration: awskey1
     pointer:
-      sourceName: "530443623308.dkr.ecr.us-east-2.amazonaws.com/demo"
+      sourceName: "master.3"
     seed:
       versionName: "master.3"
   - name: demo-www-docker-opts
@@ -25,14 +25,14 @@ resources:
 
 
 jobs:
-  - name: 22_runCI
+  - name: guru_runCI
     type: runCI
     steps:
-      - OUT: demo-www-img
+      - OUT: guru-www-img
   - name: demo-www-man
     type: manifest
     steps:
-      - IN: demo-www-img
+      - IN: guru-www-img
       - IN: demo-www-docker-opts
         applyTo:
           - demo-cram-img
@@ -45,7 +45,7 @@ jobs:
      - IN: demo-www-clus
        applyTo:
           - manifest: demo-www-man
-            image: demo-www-img
+            image: guru-www-img
             port: 80
      - TASK: managed
        deployMethod: replace
