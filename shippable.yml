@@ -1,3 +1,5 @@
+post_ci:
+  - pwd
 resources:
   - name: demo-www-img
     type: image
@@ -21,9 +23,6 @@ resources:
 
 
 jobs:
-
-language: none
-
   - name: 22_runCI
     type: runCI
     steps:
