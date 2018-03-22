@@ -29,7 +29,6 @@ jobs:
     type: runCI
     steps:
       - OUT: demo-www-img
-
   - name: demo-www-man
     type: manifest
     steps:
@@ -37,7 +36,6 @@ jobs:
       - IN: demo-www-docker-opts
     flags:
       - Demo
-
   - name: demo-cram-ecs
     type: deploy
     steps:
